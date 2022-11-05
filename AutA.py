@@ -21,7 +21,7 @@ fix = 1
 me = 1
 
 img  = cv2.imread(jpeg)
-img = cv2.resize(img, None, fx=fix  , fy=me , interpolation=2 )
+img = cv2.resize(img, None, fx=fix  , fy=me , interpolation=5 )
 img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 img = cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 31, 15)
@@ -34,7 +34,7 @@ cv2.waitKey()
     
 
 def canny(image):
-    return cv2.Canny(image, 100, 200) 
+    return cv2.Canny(image, 500, 1200) 
     
 # https://stackoverflow.com/questions/47627182/detecting-interword-space-in-ocr-using-python-and-opencv 
 # idea for spaces
